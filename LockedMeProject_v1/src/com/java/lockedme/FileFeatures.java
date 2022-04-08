@@ -1,10 +1,15 @@
 package com.java.lockedme;
 
 import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.Scanner;
 
 public class FileFeatures {
 	
@@ -59,6 +64,37 @@ public class FileFeatures {
 			return filesNames;
 			
 		}
+		
+		public static void creatingFile(String AddFile, Scanner sc) {
+			FileFeatures.makeDemoFolder("demo");
+			Path Filepath  = Paths.get("./demo/" + AddFile);
+			
+			try {
+				Files.createDirectories(Filepath.getParent());
+				File.creatingFile(Filepath);
+				System.out.println(AddFile + "created successfully");
+				
+				System.out.println("Would you want add content in the file ? (Y/N)");
+				String Choice = sc.next().toLowerCase();
+				
+				sc.nextLine();
+				
+				if(choice.equals("Y")) {
+					System.out.println("\nInput content and Press enter\n");
+					String content = sc.nextLine();
+					Files.write(Filepath, content.getBytes());
+					System.out.println("Wrritten content in file " + AddFile);
+					System.out.println("Content can be read by Notepad");
+				}
+			} catch (IOException e) {
+				System.out.println("File created failed" + AddFile);
+				System.out.println(e.getClass().getName());
+			
+				
+			}
+		}
+		
+		
 		
 	}
 	
