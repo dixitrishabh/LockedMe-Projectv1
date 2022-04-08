@@ -43,7 +43,7 @@ public class ManageFeatures {
 		Scanner sc = new Scanner(System.in);
 		do {
 			try { 
-				MenuOptions.displayMenu();
+				MenuOptions.displayMenuOptions();
 				FileFeatures.makeDemoFolder("demo");
 				
 				int input = sc.nextInt();
@@ -57,7 +57,6 @@ public class ManageFeatures {
 					
 					break;
 				case 2:
-					
 					System.out.print("Enter the name of file that you have to delete \"demo\" folder");
 					String deleteFile = sc.next();
 					
