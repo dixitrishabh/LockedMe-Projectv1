@@ -10,6 +10,8 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class FileFeatures {
 	
@@ -55,7 +57,7 @@ public class FileFeatures {
 					filesNames.add(file.getName());
 				}
 			}
-			else {
+		}    else {
 				System.out.println(" ".repeat(indentationCount * 2));
 				System.out.println("--- empty Dir");
 			}
@@ -94,9 +96,26 @@ public class FileFeatures {
 			}
 		}
 		
+		public static List<String> displayLocationofFiles(String fileName, String path){
+			List<String> filesName = new ArrayList<>();
+			FileFeatures.searchaFile = new ArrayList<>();
+			
+			if(filesName.isEmpty()) {
+				System.out.println("\n Can not find the file with this name\n "+ fileName);
+			}else {
+				System.out.println("\n File found ");
+				
+				List<String> files = IntStream.range(0, filesName.size()).mapToObj(index -> (index +1) + 
+						": " + filesName.get(index)).collect(Collectors.toList());
+				
+				files.forEach(System.out::println);
+			}
 		
+			return filesName;
 		
 	}
+		
+		
 	
 
 }
