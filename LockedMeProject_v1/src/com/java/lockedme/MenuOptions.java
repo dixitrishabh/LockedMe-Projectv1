@@ -3,7 +3,7 @@ package com.java.lockedme;
 public class MenuOptions {
 
 	
-	public static void printWeocomeScreen(String applicationName, String developerName) {
+	public static void printWelcomeScreen(String applicationName, String developerName) {
 		String applictionDeatils = String.format("-- Welcome to %s.com-- \n" + "--Application is developed by %s--.\n"
 				+"----------------------------------\n",applicationName,developerName);
 				
@@ -22,7 +22,7 @@ public class MenuOptions {
 	public static void displayMenu() {
 		String menu = "\n-------Select option from below and press Enter------\n"
 				+"1. Retrieve all files \"demo\" folder \n" 
-				+" 2. Display menu for file features(Add,Search,Delete \n"
+				+"2. Display menu for file features \n"
 				+"3. Exit Program\n";
 		System.out.println(menu);
 	}
