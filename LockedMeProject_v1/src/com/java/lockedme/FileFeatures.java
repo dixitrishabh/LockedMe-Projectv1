@@ -74,14 +74,14 @@ public class FileFeatures {
 			try {
 				Files.createDirectories(Filepath.getParent());
 				Files.createFile(Filepath);
-				System.out.println(AddFile + "created successfully");
+				System.out.println(AddFile + " created successfully ");
 				
 				System.out.println("Would you want add content in the file ? (Y/N)");
 				String choice = sc.next().toLowerCase();
 				
 				sc.nextLine();
 				
-				if(choice.equals("Y")) {
+				if(choice.equals("y")) {
 					System.out.println("\nInput content and Press enter\n");
 					String content = sc.nextLine();
 					Files.write(Filepath, content.getBytes());
