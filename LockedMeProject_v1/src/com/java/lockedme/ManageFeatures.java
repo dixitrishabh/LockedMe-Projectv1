@@ -63,7 +63,7 @@ public class ManageFeatures {
 					FileFeatures.makeDemoFolder("demo");
 					List<String> deleteFiles = FileFeatures.displayLocationofFiles(deleteFile, "demo");
 					
-					String deletePrompt = " \nSelect the index of which file to delete ?" + "\n(Enter 0 if you want to delete all)";
+					String deletePrompt = " \n(Enter 0 if you want to delete)";
 					
 					System.out.println(deletePrompt);
 					
