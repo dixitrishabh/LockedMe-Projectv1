@@ -15,6 +15,7 @@ import java.util.stream.IntStream;
 
 public class FileFeatures {
 	
+	//making a demo folder
 	public static void makeDemoFolder(String folderName) {
 		File file = new File(folderName);
 		
@@ -23,6 +24,8 @@ public class FileFeatures {
 		}
 	}
 	
+	
+	//display all files
 	public static void displayAllFiles(String path) {
 		FileFeatures.makeDemoFolder("demo");
 		
@@ -35,7 +38,7 @@ public class FileFeatures {
 		filesNames.stream().forEach(System.out::println);
 	}
 	
-	
+	//list all files
 	public static List<String> listFilesInDirectory(String path, int indentationCount, List<String> filesNames){
 		File dir = new File(path);
 		File[] files = dir.listFiles();
@@ -67,6 +70,7 @@ public class FileFeatures {
 			
 		}
 		
+		//Adding a new in demo folder
 		public static void creatingFile(String AddFile, Scanner sc) {
 			FileFeatures.makeDemoFolder("demo");
 			Path Filepath  = Paths.get("./demo/" + AddFile);
@@ -96,6 +100,7 @@ public class FileFeatures {
 			}
 		}
 		
+		//Display the location of the file.
 		public static List<String> displayLocationofFiles(String fileName, String path){
 			List<String> filesName = new ArrayList<>();
 			FileFeatures.searchaFile(path,fileName,filesName);
@@ -115,6 +120,7 @@ public class FileFeatures {
 		
 	}
 		
+		//Searching a file by its name
 		public static void searchaFile(String path,String fileName, List<String> filesName) {
 			File dir = new File(path);
 			File[] files = dir.listFiles();
@@ -133,7 +139,7 @@ public class FileFeatures {
 			}
 		}
 	
-		
+		//Deleting a file
 		public static void deleteaFile(String path) {
 			
 			File currentFile = new File(path);
