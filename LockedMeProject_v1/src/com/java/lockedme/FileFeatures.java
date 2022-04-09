@@ -70,7 +70,7 @@ public class FileFeatures {
 			
 		}
 		
-		//Adding a new in demo folder
+		//Adding a new file in demo folder
 		public static void creatingFile(String AddFile, Scanner sc) {
 			FileFeatures.makeDemoFolder("demo");
 			Path Filepath  = Paths.get("./demo/" + AddFile);
